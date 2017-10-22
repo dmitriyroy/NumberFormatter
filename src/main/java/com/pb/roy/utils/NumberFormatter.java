@@ -2,59 +2,48 @@ package com.pb.roy.utils;
 
 import java.math.BigDecimal;
 
-public class NumberFormatter {
+public class NumberFormatter{
 
-    public NumberFormatter(){
-    }
+    public NumberFormatter(){}
 
-
-    public BigDecimal formatBigDecimal(String numberString, int digitals){
+    public static BigDecimal formatBigDecimal(String number, int digits){
         //
-        numberString = numberString.trim();
-        int lenStr1 = numberString.length();
-        if(numberString.contains(".")){
-//            while(numberString.endsWith("0")){
-//                numberString = numberString.substring(0,--lenStr1);
+        number = number.trim();
+        int lenStr1 = number.length();
+        if(number.contains(".")){
+//            while(number.endsWith("0")){
+//                number = number.substring(0,--lenStr1);
 //            }
-            while(numberString.charAt(--lenStr1) == '0' ){
+            while(number.charAt(--lenStr1) == '0' ){
                 // nothing todo
             }
-            numberString = numberString.substring(0,lenStr1+1);
-            int lenStr2 = numberString.length();
-            BigDecimal number = new BigDecimal(numberString);
-            BigDecimal number2 = number.movePointRight(digitals);
-            int lenStr3 = numberString.length();
+            number = number.substring(0,lenStr1+1);
+            int lenStr2 = number.length();
+            BigDecimal number1 = new BigDecimal(number);
+            BigDecimal number2 = number1.movePointRight(digits);
+            int lenStr3 = number.length();
 
             if(lenStr2 > lenStr3){
-                return number;
+                return number1;
             }else{
-                return number2.movePointLeft(digitals);
+                return number2.movePointLeft(digits);
             }
         }
-        return new BigDecimal(numberString).movePointRight(digitals).movePointLeft(digitals);
+        return new BigDecimal(number).movePointRight(digits).movePointLeft(digits);
     }
-
-    public String formatBigDecimalToString(String numberString, int digitals){
-        return formatBigDecimal(numberString, digitals).toString();
+    public static BigDecimal formatBigDecimal(Double number, int digits){
+        return formatBigDecimal(number.toString(),digits);
     }
-
-    public Double formatDouble(String numberString, int digitals){
-        return formatBigDecimal(numberString,digitals).doubleValue();
+    public static String formatBigDecimalToString(String number, int digits){
+        return formatBigDecimal(number, digits).toString();
     }
-    public String formatDoubleToString(String numberString, int digitals){
-        return formatBigDecimalToString(numberString,digitals);
+    public static String formatBigDecimalToString(Double number, int digits){
+        return formatBigDecimalToString(number.toString(), digits);
     }
-
-    public BigDecimal formatBigDecimal(Double number, int digitals){
-        return formatBigDecimal(number.toString(),digitals);
+    public static String formatDoubleToString(String number, int digits){
+        return formatBigDecimalToString(number,digits);
     }
-    public String formatBigDecimalToString(Double number, int digitals){
-        return formatBigDecimal(number, digitals).toString();
-    }
-    public Double formatDouble(Double number, int digitals){
-        return formatDouble(number.toString(),digitals);
-    }
-    public String formatDoubleToString(Double number, int digitals){
-        return formatDouble(number,digitals).toString();
+    public static String formatDoubleToString(Double number, int digits){
+        return formatBigDecimalToString(number.toString(),digits);
     }
 }
