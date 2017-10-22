@@ -1,41 +1,44 @@
 package com.pb.roy.utils;
 
+import static com.pb.roy.utils.NumberFormatter.formatBigDecimal;
+import static com.pb.roy.utils.NumberFormatter.formatBigDecimalToString;
+import static com.pb.roy.utils.NumberFormatter.formatDoubleToString;
+
 public class Main {
     public static void main(String[] args) {
         String strValue = "123.0";
         Double dblValue = new Double("123.0");
-        NumberFormatter nf = new NumberFormatter();
 
-        System.out.println("nf.formatBigDecimal(123.0 - 0) = " + nf.formatBigDecimal(strValue,0));
-        System.out.println("nf.formatBigDecimal(123.0 - 1) = " + nf.formatBigDecimal(strValue,1));
-        System.out.println("nf.formatBigDecimal(123.0 - 2) = " + nf.formatBigDecimal(strValue,2));
-        System.out.println("nf.formatBigDecimal(123.0 - 3) = " + nf.formatBigDecimal(strValue,3));
-        System.out.println("nf.formatBigDecimal(123.0 - 4) = " + nf.formatBigDecimal(strValue,4));
-        System.out.println("nf.formatBigDecimal(dblValue-123.0 - 0) = " + nf.formatBigDecimal(dblValue,0));
-        System.out.println("nf.formatBigDecimal(dblValue-123.0 - 1) = " + nf.formatBigDecimal(dblValue,1));
-        System.out.println("nf.formatBigDecimal(dblValue-123.0 - 2) = " + nf.formatBigDecimal(dblValue,2));
-        System.out.println("nf.formatBigDecimal(dblValue-123.0 - 3) = " + nf.formatBigDecimal(dblValue,3));
-        System.out.println("nf.formatBigDecimal(dblValue-123.0 - 4) = " + nf.formatBigDecimal(dblValue,4));
-        System.out.println("nf.formatBigDecimalToString(123.0 - 0) = " + nf.formatBigDecimalToString(strValue,0));
-        System.out.println("nf.formatBigDecimalToString(123.0 - 1) = " + nf.formatBigDecimalToString(strValue,1));
-        System.out.println("nf.formatBigDecimalToString(123.0 - 2) = " + nf.formatBigDecimalToString(strValue,2));
-        System.out.println("nf.formatBigDecimalToString(123.0 - 3) = " + nf.formatBigDecimalToString(strValue,3));
-        System.out.println("nf.formatBigDecimalToString(123.0 - 4) = " + nf.formatBigDecimalToString(strValue,4));
-        System.out.println("nf.formatBigDecimalToString(dblValue - 123.0 - 0) = " + nf.formatBigDecimalToString(dblValue,0));
-        System.out.println("nf.formatBigDecimalToString(dblValue - 123.0 - 1) = " + nf.formatBigDecimalToString(dblValue,1));
-        System.out.println("nf.formatBigDecimalToString(dblValue - 123.0 - 2) = " + nf.formatBigDecimalToString(dblValue,2));
-        System.out.println("nf.formatBigDecimalToString(dblValue - 123.0 - 3) = " + nf.formatBigDecimalToString(dblValue,3));
-        System.out.println("nf.formatBigDecimalToString(dblValue - 123.0 - 4) = " + nf.formatBigDecimalToString(dblValue,4));
-        System.out.println("nf.formatDoubleToString(123.0 - 0) = " + nf.formatDoubleToString(strValue,0));
-        System.out.println("nf.formatDoubleToString(123.0 - 1) = " + nf.formatDoubleToString(strValue,1));
-        System.out.println("nf.formatDoubleToString(123.0 - 2) = " + nf.formatDoubleToString(strValue,2));
-        System.out.println("nf.formatDoubleToString(123.0 - 3) = " + nf.formatDoubleToString(strValue,3));
-        System.out.println("nf.formatDoubleToString(123.0 - 4) = " + nf.formatDoubleToString(strValue,4));
-        System.out.println("nf.formatDoubleToString(dblValue - 123.0 - 0) = " + nf.formatDoubleToString(dblValue,0));
-        System.out.println("nf.formatDoubleToString(dblValue - 123.0 - 1) = " + nf.formatDoubleToString(dblValue,1));
-        System.out.println("nf.formatDoubleToString(dblValue - 123.0 - 2) = " + nf.formatDoubleToString(dblValue,2));
-        System.out.println("nf.formatDoubleToString(dblValue - 123.0 - 3) = " + nf.formatDoubleToString(dblValue,3));
-        System.out.println("nf.formatDoubleToString(dblValue - 123.0 - 4) = " + nf.formatDoubleToString(dblValue,4));
+        System.out.println("formatBigDecimal(123.0 - 0) = " + formatBigDecimal(strValue,0));
+        System.out.println("formatBigDecimal(123.0 - 1) = " + formatBigDecimal(strValue,1));
+        System.out.println("formatBigDecimal(123.0 - 2) = " + formatBigDecimal(strValue,2));
+        System.out.println("formatBigDecimal(123.0 - 3) = " + formatBigDecimal(strValue,3));
+        System.out.println("formatBigDecimal(123.0 - 4) = " + formatBigDecimal(strValue,4));
+        System.out.println("formatBigDecimal(dblValue-123.0 - 0) = " + formatBigDecimal(dblValue,0));
+        System.out.println("formatBigDecimal(dblValue-123.0 - 1) = " + formatBigDecimal(dblValue,1));
+        System.out.println("formatBigDecimal(dblValue-123.0 - 2) = " + formatBigDecimal(dblValue,2));
+        System.out.println("formatBigDecimal(dblValue-123.0 - 3) = " + formatBigDecimal(dblValue,3));
+        System.out.println("formatBigDecimal(dblValue-123.0 - 4) = " + formatBigDecimal(dblValue,4));
+        System.out.println("formatBigDecimalToString(123.0 - 0) = " + formatBigDecimalToString(strValue,0));
+        System.out.println("formatBigDecimalToString(123.0 - 1) = " + formatBigDecimalToString(strValue,1));
+        System.out.println("formatBigDecimalToString(123.0 - 2) = " + formatBigDecimalToString(strValue,2));
+        System.out.println("formatBigDecimalToString(123.0 - 3) = " + formatBigDecimalToString(strValue,3));
+        System.out.println("formatBigDecimalToString(123.0 - 4) = " + formatBigDecimalToString(strValue,4));
+        System.out.println("formatBigDecimalToString(dblValue - 123.0 - 0) = " + formatBigDecimalToString(dblValue,0));
+        System.out.println("formatBigDecimalToString(dblValue - 123.0 - 1) = " + formatBigDecimalToString(dblValue,1));
+        System.out.println("formatBigDecimalToString(dblValue - 123.0 - 2) = " + formatBigDecimalToString(dblValue,2));
+        System.out.println("formatBigDecimalToString(dblValue - 123.0 - 3) = " + formatBigDecimalToString(dblValue,3));
+        System.out.println("formatBigDecimalToString(dblValue - 123.0 - 4) = " + formatBigDecimalToString(dblValue,4));
+        System.out.println("formatDoubleToString(123.0 - 0) = " + formatDoubleToString(strValue,0));
+        System.out.println("formatDoubleToString(123.0 - 1) = " + formatDoubleToString(strValue,1));
+        System.out.println("formatDoubleToString(123.0 - 2) = " + formatDoubleToString(strValue,2));
+        System.out.println("formatDoubleToString(123.0 - 3) = " + formatDoubleToString(strValue,3));
+        System.out.println("formatDoubleToString(123.0 - 4) = " + formatDoubleToString(strValue,4));
+        System.out.println("formatDoubleToString(dblValue - 123.0 - 0) = " + formatDoubleToString(dblValue,0));
+        System.out.println("formatDoubleToString(dblValue - 123.0 - 1) = " + formatDoubleToString(dblValue,1));
+        System.out.println("formatDoubleToString(dblValue - 123.0 - 2) = " + formatDoubleToString(dblValue,2));
+        System.out.println("formatDoubleToString(dblValue - 123.0 - 3) = " + formatDoubleToString(dblValue,3));
+        System.out.println("formatDoubleToString(dblValue - 123.0 - 4) = " + formatDoubleToString(dblValue,4));
 
     }
 }
