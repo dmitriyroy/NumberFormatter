@@ -7,6 +7,9 @@ public class NumberFormatter{
     public NumberFormatter(){}
 
     public static BigDecimal formatBigDecimal(String number, int digits){
+        if(number == null || number.trim().length() == 0){
+            return null;
+        }
         //
         number = number.trim();
         int lenStr1 = number.length();
@@ -32,18 +35,33 @@ public class NumberFormatter{
         return new BigDecimal(number).movePointRight(digits).movePointLeft(digits);
     }
     public static BigDecimal formatBigDecimal(Double number, int digits){
+        if(number == null){
+            return null;
+        }
         return formatBigDecimal(number.toString(),digits);
     }
     public static String formatBigDecimalToString(String number, int digits){
+        if(number == null || number.trim().length() == 0){
+            return null;
+        }
         return formatBigDecimal(number, digits).toString();
     }
     public static String formatBigDecimalToString(Double number, int digits){
+        if(number == null){
+            return null;
+        }
         return formatBigDecimalToString(number.toString(), digits);
     }
     public static String formatDoubleToString(String number, int digits){
+        if(number == null || number.trim().length() == 0){
+            return null;
+        }
         return formatBigDecimalToString(number,digits);
     }
     public static String formatDoubleToString(Double number, int digits){
+        if(number == null){
+            return null;
+        }
         return formatBigDecimalToString(number.toString(),digits);
     }
 }
